@@ -1,209 +1,142 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyaflair</title>
+    <title>Voyaflair - Modern Hero & Header</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet">
-    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Instrument Serif"', 'serif'],
-                        sans: ['"Instrument Sans"', 'sans-serif'],
-                        brand: ['"Tropiline"', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            bg: '#FDFDFB',
-                            primary: '#000000',
-                        }
-                    },
-                    animation: {
-                        fadeIn: 'fadeIn 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                    },
-                },
-            },
-        }
-    </script>
+    
+    <!-- Alpine.js CDN -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <style>
-        .reveal {
-            opacity: 0;
-            transition: all 0.9s ease-out;
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .animate-fadeIn {
+            animation: fadeIn 1.25s ease-in-out both;
         }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Instrument Sans", sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-10{bottom:2.5rem}.right-0{right:0px}.top-0{top:0px}.top-full{top:100%}.z-0{z-index:0}.z-10{z-index:10}.z-50{z-index:50}.z-\[60\]{z-index:60}.mb-12{margin-bottom:3rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.block{display:block}.flex{display:flex}.hidden{display:none}.h-10{height:2.5rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-\[660px\]{height:660px}.h-full{height:100%}.w-10{width:2.5rem}.w-24{width:6rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-full{width:100%}.min-w-\[200px\]{min-width:200px}.max-w-\[320px\]{max-width:320px}.shrink-0{flex-shrink:0}.translate-x-full{--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.self-end{align-self:flex-end}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}.rounded-\[1\.5rem\]{border-radius:1.5rem}.rounded-\[2rem\]{border-radius:2rem}.rounded-full{border-radius:9999px}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.border{border-width:1px}.border-y{border-top-width:1px;border-bottom-width:1px}.border-gray-50{--tw-border-opacity:1;border-color:rgb(249 250 251 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.bg-\[\#FDFDFB\]{--tw-bg-opacity:1;background-color:rgb(253 253 251 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.bg-brand-bg{--tw-bg-opacity:1;background-color:rgb(253 253 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.fill-current{fill:currentColor}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-center{text-align:center}.font-brand{font-family:"Tropiline", serif}.font-sans{font-family:"Instrument Sans", sans-serif}.font-serif{font-family:"Instrument Serif", serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.leading-tight{line-height:1.25}.tracking-widest{letter-spacing:0.1em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-brand-primary{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.hover\:-translate-y-1:hover{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:text-gray-500:hover{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.hover\:text-gray-600:hover{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:block{display:block}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-12{height:3rem}.md\:w-12{width:3rem}.md\:w-32{width:8rem}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}}</style></head>
-<body class="bg-brand-bg text-brand-primary font-sans overflow-x-hidden" data-new-gr-c-s-check-loaded="14.1286.0" data-gr-ext-installed="">
+</head>
+<body class="antialiased font-sans">
 
-    <header class="bg-[#FDFDFB] py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-        <a href="/" class="w-24 md:w-32">
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-white text-black border border-black rounded-full flex items-center justify-center font-bold text-sm md:text-base shrink-0 font-sans">
-                VF
-            </div>
-        </a>
+    <!-- Wrapper for Alpine.js state -->
+    <div x-data="{ isScrolled: false, mobileMenu: false }" @scroll.window.passive="isScrolled = (window.pageYOffset > 50)">
         
-        <nav class="hidden md:flex gap-8 font-sans uppercase text-xs tracking-widest font-medium">
-            <a href="/" class="hover:text-gray-500 transition-colors">Home</a>
-            <a href="/about" class="hover:text-gray-500 transition-colors">About Us</a>
-            <div class="group relative cursor-pointer">
-                <span class="hover:text-gray-500">Destinations ▾</span>
-                <div class="absolute hidden group-hover:block bg-white shadow-xl p-4 min-w-[200px] top-full border border-gray-50">
-                    <a href="#" class="block py-2 hover:bg-gray-50 px-2 transition-colors">Europe</a>
-                    <a href="#" class="block py-2 hover:bg-gray-50 px-2 transition-colors">Asia</a>
-                </div>
-            </div>
-            <a href="/contact" class="hover:text-gray-500 transition-colors">Contact</a>
-        </nav>
+        <!-- STICKY HEADER -->
+        <header 
+            class="fixed top-0 left-0 w-full z-[50] transition-all duration-300"
+            :class="isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3 text-slate-900' : 'bg-transparent py-6 text-white'"
+        >
+            <nav class="container mx-auto px-6 flex justify-between items-center">
+                <div class="text-2xl font-bold tracking-tight">VF</div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-wider">
+                    <li><a href="#" class="hover:opacity-50 transition-opacity">Home</a></li>
+                    <li><a href="#" class="hover:opacity-50 transition-opacity">Destinations</a></li>
+                    <li><a href="#" class="hover:opacity-50 transition-opacity">About me</a></li>
+                    <li><a href="#" class="hover:opacity-50 transition-opacity">Contact</a></li>
+                </ul>
 
-        <button id="open-sidebar" class="md:hidden p-2 hover:bg-gray-100 rounded-md transition-colors">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button> 
-    </header> 
-
-    <main>
-        <section class="p-4 w-full">
-            <div class="reveal overflow-hidden rounded-[2rem] active">
-                <div class="relative h-[660px] w-full flex flex-col justify-center items-center text-center overflow-hidden rounded-[1.5rem] shadow-sm">
-                    <div class="absolute inset-0 z-0">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=2073&amp;auto=format&amp;fit=crop" alt="Travel Background" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40"></div>
-                    </div>
-
-                    <div class="relative z-10 flex flex-col items-center px-6">
-                        <span class="text-sm uppercase tracking-widest text-gray-200 mb-4 font-sans">
-                            Welcome to Voyaflair
-                        </span>
-                        
-                        <h1 class="font-serif text-5xl md:text-7xl mb-8 leading-tight text-white">
-                            Explore • Feel • Repeat
-                        </h1>
-                        
-                        <a href="/destinations" class="group flex items-center gap-2 border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest font-sans rounded-sm">
-                            Read more
-                            <span class="group-hover:translate-x-1 transition-transform">→</span>
-                        </a>
-                    </div>
-
-                    <div class="absolute bottom-10 z-10 flex gap-6">
-                        <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1" aria-label="Instagram">
-                            <svg class="w-5 h-5 fill-current text-white group-hover:text-gray-300" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
-                            </svg>
-                        </a>
-                        <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1" aria-label="TikTok">
-                            <svg class="w-5 h-5 fill-current text-white group-hover:text-gray-300" viewBox="0 0 24 24">
-                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13-.08-.25-.17-.38-.25V14.5c0 1.93-.6 3.79-1.92 5.21-1.8 1.93-4.67 2.73-7.24 2.11-2.57-.62-4.67-2.65-5.32-5.18-.75-2.82-.04-5.95 1.95-8.15 1.45-1.61 3.52-2.58 5.68-2.61.12 0 .25 0 .38.01v4.2c-1.22.04-2.45.51-3.32 1.37-.92 1.1-1.2 2.68-.73 4.07.45 1.34 1.65 2.37 3.03 2.62 1.46.26 3.03-.2 4-1.3.43-.51.68-1.15.68-1.84V.02z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main> 
-
-    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-[60] backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
-        <aside id="sidebar-panel" class="fixed top-0 right-0 w-full max-w-[320px] h-full bg-white p-8 flex flex-col shadow-2xl transform transition-transform duration-300 ease-in-out translate-x-full">
-            <button id="close-sidebar" class="self-end p-2 hover:bg-gray-100 rounded-full text-2xl">✕</button>
-            <div class="mb-12 self-center font-brand text-3xl">Voyaflair</div>
-            <nav class="flex flex-col gap-6 font-sans uppercase text-sm tracking-widest border-y py-12">
-                <a href="/" class="text-black font-bold hover:text-gray-600">Home</a>
-                <a href="/about" class="hover:text-gray-600 transition-colors">About Us</a>
-                <a href="/shop" class="flex justify-between hover:text-gray-600 transition-colors">Shop <span>▾</span></a>
-                <a href="/contact" class="hover:text-gray-600 transition-colors">Contact</a>
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenu = true" class="md:hidden p-2">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </nav>
-        </aside>
+        </header>
+
+        <!-- MOBILE MENU OVERLAY & SIDEBAR -->
+        <template x-teleport="body">
+            <div>
+                <!-- Backdrop -->
+                <div 
+                    x-show="mobileMenu" 
+                    x-transition:enter="transition opacity duration-300" 
+                    x-transition:enter-start="opacity-0" 
+                    x-transition:enter-end="opacity-100" 
+                    x-transition:leave="transition opacity duration-200" 
+                    x-transition:leave-start="opacity-100" 
+                    x-transition:leave-end="opacity-0" 
+                    @click="mobileMenu = false" 
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
+                ></div>
+
+                <!-- Aside Panel -->
+                <aside 
+                    x-show="mobileMenu" 
+                    x-transition:enter="transition transform duration-300 ease-in-out" 
+                    x-transition:enter-start="translate-x-full" 
+                    x-transition:enter-end="translate-x-0" 
+                    x-transition:leave="transition transform duration-300 ease-in-out" 
+                    x-transition:leave-start="translate-x-0" 
+                    x-transition:leave-end="translate-x-full" 
+                    class="fixed top-0 right-0 w-80 h-full bg-white z-[110] p-8 shadow-2xl flex flex-col"
+                >
+                    <button @click="mobileMenu = false" class="self-end p-2 text-slate-900 hover:bg-slate-100 rounded-full">✕</button>
+                    
+                    <div class="mt-8 mb-12 text-center font-serif text-3xl text-slate-900 italic">Voyaflair</div>
+                    
+                    <nav class="flex flex-col gap-8 text-slate-900 uppercase text-xs tracking-[0.2em] font-semibold border-y border-slate-100 py-12">
+                        <a href="#" class="hover:text-slate-400 transition-colors">Home</a>
+                        <a href="#" class="hover:text-slate-400 transition-colors">About me</a>
+                        <a href="#" class="hover:text-slate-400 transition-colors">Destinations</a>
+                        <a href="#" class="hover:text-slate-400 transition-colors">Contact</a>
+                    </nav>
+                </aside>
+            </div>
+        </template>
     </div>
 
-    <script>
-        const openBtn = document.getElementById('open-sidebar');
-        const closeBtn = document.getElementById('close-sidebar');
-        const overlay = document.getElementById('sidebar-overlay');
-        const panel = document.getElementById('sidebar-panel');
+    <!-- HERO SECTION -->
+    <section class="p-4 w-full">
+        <div class="relative h-[660px] w-full flex flex-col justify-center items-center text-center overflow-hidden rounded-[1.5rem] shadow-sm animate-fadeIn">
+            <!-- Background Layer -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop" class="w-full h-full object-cover" alt="Background">
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
 
-        function toggleSidebar(isOpen) {
-            if (isOpen) {
-                overlay.classList.remove('opacity-0', 'pointer-events-none');
-                panel.classList.remove('translate-x-full');
-                document.body.classList.add('overflow-hidden');
-            } else {
-                overlay.classList.add('opacity-0', 'pointer-events-none');
-                panel.classList.add('translate-x-full');
-                document.body.classList.remove('overflow-hidden');
-            }
-        }
+            <!-- Foreground Content -->
+            <div class="relative z-10 flex flex-col items-center px-6">
+                <span class="text-sm uppercase tracking-widest text-gray-200 mb-4">Welcome to Studio</span>
+                <h1 class="font-serif text-5xl md:text-7xl mb-8 leading-tight text-white">Explore • Feel • Repeat</h1>
+                <a href="#" class="group flex items-center gap-2 border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest font-sans">
+                    Read more
+                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        openBtn.addEventListener('click', () => toggleSidebar(true));
-        closeBtn.addEventListener('click', () => toggleSidebar(false));
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) toggleSidebar(false);
-        });
+    <!-- CONTENT SECTION -->
+    <section class="relative z-20 min-h-screen bg-white text-slate-900 px-6 py-24">
+        <div class="max-w-4xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-5xl font-serif">Deep Content</h2>
+                <p class="text-xl text-slate-500">Scroll down to see the header morph into its glass state.</p>
+            </div>
 
-        // Scroll Reveal
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Run on load
-    </script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-4 p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <h3 class="text-2xl font-bold">Sticky Behavior</h3>
+                    <p class="text-slate-600">The header remains at the top, blurring whatever content passes beneath it.</p>
+                </div>
+                <div class="space-y-4 p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <h3 class="text-2xl font-bold">Performance</h3>
+                    <p class="text-slate-600">Using hardware-accelerated transitions and passive listeners for 60fps scrolling.</p>
+                </div>
+            </div>
 
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+            <!-- Spacer for scroll height -->
+            <div class="h-[100vh]"></div>
+        </div>
+    </section>
+
+</body>
+</html>
