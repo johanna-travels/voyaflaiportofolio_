@@ -109,9 +109,13 @@
     <!-- HERO SECTION -->
     <main x-data="{ imgLoaded: false }" x-init="setTimeout(() => imgLoaded = true, 100)">
         <div class="relative h-screen w-full overflow-hidden bg-neutral-900">
-            <img src="IMAGES_MIKAEL/HERO_PHOTO.JPG" 
+            <!-- <img src="IMAGES_MIKAEL/HERO_PHOTO.JPG" 
                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[2000ms]"
-                 :class="imgLoaded ? 'opacity-50' : 'opacity-0'">
+                 :class="imgLoaded ? 'opacity-50' : 'opacity-0'"> -->.  
+
+                 <img src="IMAGES_MIKAEL/HERO_PHOTO.JPG" 
+     class="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-[2000ms]"
+     :class="imgLoaded ? 'opacity-50' : 'opacity-0'">
             
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"></div>
 
